@@ -22,6 +22,11 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService; 
 	
+	@RequestMapping({ "/hello" })
+	public String firstPage() {
+		return "Hello World";
+	}
+	
 	@GetMapping("/employee")
 	List<Employee> get(){
 		return employeeService.get();
