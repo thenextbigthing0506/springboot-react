@@ -1,14 +1,16 @@
 spring:
 
   datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
     password: Root@123
     url: jdbc:mysql://localhost:3306/springbootcrudapi
     username: root
-  hibernate:
-    jpa:
-        ddl-auto: update
-        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-        generate-ddl: true
+  jpa:
+      hibernate:
+                ddl-auto: create
+      database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+       
   main:
     allow-circular-references: true
 jwt.secret: javainuse12345678901234567890123456789012345678901234567890123456789012345678901234567890
+
