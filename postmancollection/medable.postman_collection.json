@@ -96,6 +96,39 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "pharmacyregister",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n\"user\":{\r\n         \"username\":\"user1\",\r\n        \"password\":\"password\"\r\n},\r\n\"pharmacy\":{\r\n    \"branch\":\"pharmacy1\",\r\n    \"name\":\"branch\"\r\n}\r\n\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/pharmacy-register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pharmacy-register"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

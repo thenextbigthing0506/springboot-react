@@ -17,7 +17,9 @@ import com.JWT.config.JwtTokenUtil;
 import com.JWT.model.JwtRequest;
 import com.JWT.model.JwtResponse;
 import com.JWT.service.JwtUserDetailsService;
+import com.medable.model.registration.PharmacyRegistrationRequest;
 import com.medable.sample.model.User;
+import com.medable.sample.service.PharmacyService;
 
 @RestController
 @CrossOrigin
@@ -31,6 +33,9 @@ public class JwtAuthenticationController {
 
 	@Autowired
 	private JwtUserDetailsService userDetailsService;
+	
+	@Autowired
+	private PharmacyService pharmacyService; 
 
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
@@ -61,6 +66,12 @@ public class JwtAuthenticationController {
 		userNew.setPassword(user.getPassword());
 		userNew.setUsername(user.getUsername());
 		userDetailsService.save(userNew);
+		return ResponseEntity.ok("Saved User");
+	}
+	
+	@RequestMapping(value = "/pharmacy-register", method = RequestMethod.POST)
+	public ResponseEntity<?> createPharmacy(@RequestBody PharmacyRegistrationRequest pharmacyRegistrationRequest) throws Exception {
+		pharmacyService.create(pharmacyRegistrationRequest);
 		return ResponseEntity.ok("Saved User");
 	}
 }
