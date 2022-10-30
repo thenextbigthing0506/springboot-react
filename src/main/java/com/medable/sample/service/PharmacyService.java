@@ -48,12 +48,17 @@ public class PharmacyService {
 		user.setId(pharmacyRegistrationRequest.getUser().getId());
 		user.setPassword(pharmacyRegistrationRequest.getUser().getPassword());
 		user.setUsername(pharmacyRegistrationRequest.getUser().getUsername());
+		user.setMobile(pharmacyRegistrationRequest.getUser().getMobile());
+		user.setEmailId(pharmacyRegistrationRequest.getUser().getEmailId());
 		
 		Pharmacy pharmacy=new Pharmacy();
 		pharmacy.setUser(user);
 		pharmacy.setId(pharmacyRegistrationRequest.getPharmacy().getId());
 		pharmacy.setBranch(pharmacyRegistrationRequest.getPharmacy().getBranch());
 		pharmacy.setName(pharmacyRegistrationRequest.getPharmacy().getName());
+		pharmacy.setLat(pharmacyRegistrationRequest.getPharmacy().getLat());
+		pharmacy.setLon(pharmacyRegistrationRequest.getPharmacy().getLon());
+		
 		save(pharmacy);
 		}
 		

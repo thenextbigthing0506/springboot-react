@@ -21,6 +21,12 @@ public class User {
 	@Column
 	private String password;
 	
+	@Column
+    private String emailId;
+	
+	@Column
+	private String mobile;
+	
 	
 	
 	public Integer getId() {
@@ -58,6 +64,22 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
 
 	

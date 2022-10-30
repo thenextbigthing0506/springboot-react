@@ -12,6 +12,12 @@ public class PharmacyDTO implements Serializable {
 	
 	private String name;
 	
+	private long lon;
+	
+	private long lat;
+	
+	
+	
 	//need default constructor for JSON Parsing
 	public PharmacyDTO()
 	{
@@ -52,5 +58,31 @@ public class PharmacyDTO implements Serializable {
 		this.name = name;
 	}
 
+
+
+	public long getLon() {
+		return lon;
+	}
+
+
+
+	public void setLon(long lon) {
+		this.lon = lon;
+	}
+
+
+
+	public long getLat() {
+		return lat;
+	}
+
+
+
+	public void setLat(long lat) {
+		this.lat = lat;
+	}
+
+	
+	
 	
 }

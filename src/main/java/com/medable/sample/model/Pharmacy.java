@@ -9,22 +9,28 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tbl_pharmacy")
+@Table(name = "tbl_pharmacy")
 public class Pharmacy {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private Integer id;
-	
+
 	@Column
 	private String name;
-	
+
 	@Column
 	private String branch;
-	
+
+	@Column
+	private long lon;
+
+	@Column
+	private long lat;
+
 	@OneToOne
 	private User user;
-	
+
 	public Integer getId() {
 		return id;
 	}
@@ -57,6 +63,20 @@ public class Pharmacy {
 		this.user = user;
 	}
 
-	
+	public long getLon() {
+		return lon;
+	}
+
+	public void setLon(long lon) {
+		this.lon = lon;
+	}
+
+	public long getLat() {
+		return lat;
+	}
+
+	public void setLat(long lat) {
+		this.lat = lat;
+	}
 
 }
